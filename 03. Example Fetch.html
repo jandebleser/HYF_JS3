@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8">
   <title>Example Fetch</title>
-  <link rel="stylesheet" type="text/css" href="style.css" />
+  <link rel="stylesheet" type="text/css" href="data/style.css" />
 </head>
-    <body>
+<body>  
 
 <div class="wrap">
     <h1>Fetch Example</h1>
@@ -23,16 +23,15 @@
 </div>
 
 <script>
-    document.querySelector('#button1').addEventListener('click', () => {
-        var myRequest = new Request('extra.html');
-        fetch(myRequest)
-            .then(res => res.text())
-            .then(text => document.getElementById('content').innerHTML = text);
-        
-    });
-    document.querySelector('#button2').addEventListener('click', () => {
-        document.getElementById('content').innerHTML = '2';
-    });
+document.querySelector('#button1').addEventListener('click', () => {
+    fetch('data/extra.html')
+        .then(res => res.text())
+        .then(text => document.querySelector('#content').innerHTML = text);
+    
+});
+document.querySelector('#button2').addEventListener('click', () => {
+    document.querySelector('#content').innerHTML = '2';
+});
 </script>
 </body>
 </html>
