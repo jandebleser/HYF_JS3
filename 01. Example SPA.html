@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>My first SPA</title>
+  <link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+<body>
+<div class="wrap">
+    <h1>Very Simple "Single Page Application"</h1>
+    <nav>
+        <button id="button1">
+            Show number "1"
+        </button>
+        <button id="button2">
+            Show number "2"
+        </button>
+    </nav>
+    <div id="content">
+        <p class="empty">Content goes here...</p>
+    </div>
+</div>
+<script>
+document.querySelector('#button1').addEventListener('click', () => {
+    document.querySelector('#content').innerHTML = '<h1>1</h1>';
+});
+document.querySelector('#button2').addEventListener('click', () => {
+    document.querySelector('#content').innerHTML = '<h1>2</h1>';
+});
+</script>       
+</body>
+</html>

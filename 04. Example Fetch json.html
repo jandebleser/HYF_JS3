@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Twitter | rappi </title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+<body>
+<div class="wrap">
+    <h1>Fetch JSON Example</h1>
+    <nav>
+        <button id="button1">
+            Fetch <code>teachers.json</code>
+        </button>
+        <button id="button2">
+            Show number "2"
+        </button>
+    </nav>
+    <div id="content">
+        <p class="empty">Content goes here...</p>
+    </div>
+</div>
+<script>
+
+document.querySelector('#button1').addEventListener('click', () => {
+    fetch('teachers.json')
+        .then(res => res.json())
+        .then(data => {
+            const $content = document.querySelector('#content');
+            $content.innerHTML = '';
+            data['teachers'].forEach(t => {
+                const $p = document.createElement('p');
+                $content.appendChild($p);
+                $p.innerHTML = 'Hello ' + t.name;
+            });
+        });
+});
+
+document.querySelector('#button2').addEventListener('click', () => {
+    document.querySelector('#content').innerHTML = '2';
+});
+
+</script>
+</body>
+</html>
